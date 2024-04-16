@@ -27,7 +27,7 @@
    - Select 'Edit Theme COde' 
    - In the customization menu, click on "Add section."
    - Create a new file "product-font-settings.liquid" and copy over the code
-   - Import the section into any template using the following snippet:  
+   - Import the section into any template using the following snippet:  `{% section 'product-font-settings' %}`
 
 2. **Usage**:
    - Use the provided dropdown menus and input fields to adjust the font family, size, color, font-weight and animation style.
