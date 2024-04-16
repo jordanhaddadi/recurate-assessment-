@@ -1,0 +1,97 @@
+{%- comment -%}
+  sections/product-font-settings.liquid
+
+  /////////// RECURATE TEST ///////////
+  Create a Shopify Template Section that allows customization of font settings for products.
+{%- endcomment -%}
+
+<style>
+  /* Bonus CSS animations */
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
+  }
+
+  @keyframes slideInFromLeft {
+      from {
+          transform: translateX(-100%);
+      }
+      to {
+          transform: translateX(0);
+      }
+  }
+
+  @keyframes slideInFromRight {
+      from {
+          transform: translateX(100%);
+      }
+      to {
+          transform: translateX(0);
+      }
+  }
+</style>
+
+<div class="custom-font-settings" id="customFontSettings{{ section.id }}">
+    Hello Recurate!
+</div>
+
+<label for="fontFamily{{ section.id }}">Font Family:</label>
+<select id="fontFamily{{ section.id }}">
+    <option value="Arial, sans-serif">Arial</option>
+    <option value="Times New Roman, serif">Times New Roman</option>
+    <!-- Any new font options would go here -->
+</select><br><br>
+
+<label for="fontWeight{{ section.id }}">Font Weight:</label>
+<select id="fontWeight{{ section.id }}">
+    <option value="normal">Normal</option>
+    <option value="bold">Bold</option>
+    <!-- Any additional font weight options would go here -->
+</select><br><br>
+
+<label for="fontSize{{ section.id }}">Font Size:</label>
+<input type="range" id="fontSize{{ section.id }}" min="10" max="24" value="16"><br><br>
+
+<label for="colorPicker{{ section.id }}">Color:</label>
+<input type="color" id="colorPicker{{ section.id }}" value="#000000"><br><br>
+
+<label for="fontAnimation{{ section.id }}">Font Animation:</label>
+<select id="fontAnimation{{ section.id }}">
+    <option value="none">None</option>
+    <option value="fadeIn">Fade In</option>
+    <option value="slideInFromLeft">Slide In From Left</option>
+    <option value="slideInFromRight">Slide In From Right</option>
+    <!-- Any additional animation options would go here -->
+</select><br><br>
+
+<script>
+  // Apply the settings
+  function applySettings{{ section.id }}() {
+      let customFontSettings = document.getElementById('customFontSettings{{ section.id }}');
+      let fontFamily = document.getElementById('fontFamily{{ section.id }}').value;
+      let fontWeight = document.getElementById('fontWeight{{ section.id }}').value;
+      let fontSize = document.getElementById('fontSize{{ section.id }}').value + 'px';
+      let color = document.getElementById('colorPicker{{ section.id }}').value;
+      let fontAnimation = document.getElementById('fontAnimation{{ section.id }}').value;
+
+      customFontSettings.style.fontFamily = fontFamily;
+      customFontSettings.style.fontWeight = fontWeight;
+      customFontSettings.style.fontSize = fontSize;
+      customFontSettings.style.color = color;
+      customFontSettings.style.animation = fontAnimation !== 'none' ? `${fontAnimation} 0.5s ease` : 'none';
+  }
+
+  // Event listeners for settings UI
+  document.getElementById('fontFamily{{ section.id }}').addEventListener('change', applySettings{{ section.id }});
+  document.getElementById('fontWeight{{ section.id }}').addEventListener('change', applySettings{{ section.id }});
+  document.getElementById('fontSize{{ section.id }}').addEventListener('input', applySettings{{ section.id }});
+  document.getElementById('colorPicker{{ section.id }}').addEventListener('input', applySettings{{ section.id }});
+  document.getElementById('fontAnimation{{ section.id }}').addEventListener('change', applySettings{{ section.id }});
+
+  // Apply settings on page load
+  applySettings{{ section.id }}();
+</script>
