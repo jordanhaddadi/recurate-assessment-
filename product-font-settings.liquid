@@ -41,20 +41,22 @@
 
 <label for="fontFamily{{ section.id }}">Font Family:</label>
 <select id="fontFamily{{ section.id }}">
-    <option value="Arial, sans-serif">Arial</option>
-    <option value="Times New Roman, serif">Times New Roman</option>
-    <!-- Any new font options would go here -->
+  <option value="Open Sans, sans-serif">Open Sans</option>
+  <option value="Quicksand, sans-serif">Quicksand</option>
+  <option value="Georgia, serif">Georgia</option>
+  <option value="Playfair Display, serif">Playfair Display</option>
+    <!-- Additional font options here -->
 </select><br><br>
 
 <label for="fontWeight{{ section.id }}">Font Weight:</label>
 <select id="fontWeight{{ section.id }}">
     <option value="normal">Normal</option>
     <option value="bold">Bold</option>
-    <!-- Any additional font weight options would go here -->
+    <!-- Additional font weight options here -->
 </select><br><br>
 
 <label for="fontSize{{ section.id }}">Font Size:</label>
-<input type="range" id="fontSize{{ section.id }}" min="10" max="24" value="16"><br><br>
+<input type="range" id="fontSize{{ section.id }}" min="6" max="44" value="20"><br><br>
 
 <label for="colorPicker{{ section.id }}">Color:</label>
 <input type="color" id="colorPicker{{ section.id }}" value="#000000"><br><br>
@@ -65,11 +67,11 @@
     <option value="fadeIn">Fade In</option>
     <option value="slideInFromLeft">Slide In From Left</option>
     <option value="slideInFromRight">Slide In From Right</option>
-    <!-- Any additional animation options would go here -->
+    <!-- Additional animation options here -->
 </select><br><br>
 
 <script>
-  // Apply the settings
+  // Create a function to apply the settings
   function applySettings{{ section.id }}() {
       let customFontSettings = document.getElementById('customFontSettings{{ section.id }}');
       let fontFamily = document.getElementById('fontFamily{{ section.id }}').value;
@@ -85,13 +87,13 @@
       customFontSettings.style.animation = fontAnimation !== 'none' ? `${fontAnimation} 0.5s ease` : 'none';
   }
 
-  // Event listeners for settings UI
+  // Add event listeners 
   document.getElementById('fontFamily{{ section.id }}').addEventListener('change', applySettings{{ section.id }});
   document.getElementById('fontWeight{{ section.id }}').addEventListener('change', applySettings{{ section.id }});
   document.getElementById('fontSize{{ section.id }}').addEventListener('input', applySettings{{ section.id }});
   document.getElementById('colorPicker{{ section.id }}').addEventListener('input', applySettings{{ section.id }});
   document.getElementById('fontAnimation{{ section.id }}').addEventListener('change', applySettings{{ section.id }});
 
-  // Apply settings on page load
+  // Run applySettings on page load
   applySettings{{ section.id }}();
 </script>
