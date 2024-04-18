@@ -24,10 +24,13 @@
 1. **Adding the Section**:
    - Navigate to your Shopify admin panel.
    - Go to the "Online Store" section and then click on "Themes."
-   - Select 'Edit Theme COde' 
-   - In the customization menu, click on "Add section."
+   - Select 'Edit Theme Code' 
    - Create a new file "product-font-settings.liquid" and copy over the code
    - Import the section into any template using the following snippet:  `{% section 'product-font-settings' %}`
 
 2. **Usage**:
    - Use the provided dropdown menus and input fields to adjust the font family, size, color, font-weight and animation style.
+  
+3. **Visual / What It Looks Like**:
+<img width="358" alt="image" src="https://github.com/jordanhaddadi/recurate-assessment-/assets/14862217/30620fc5-c5ae-47ba-bfca-19ce37c60017">
+
