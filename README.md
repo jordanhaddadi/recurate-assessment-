@@ -32,5 +32,5 @@
    - Use the provided dropdown menus and input fields to adjust the font family, size, color, font-weight and animation style.
   
 3. **Visual / What It Looks Like**:
-<img width="358" alt="image" src="https://github.com/jordanhaddadi/recurate-assessment-/assets/14862217/30620fc5-c5ae-47ba-bfca-19ce37c60017">
+<img width="366" alt="image" src="https://github.com/jordanhaddadi/shopify-font-picker/assets/14862217/93ca05b6-986e-4e65-a162-378743067e0c">
 
